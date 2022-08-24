@@ -7,18 +7,18 @@ function ContextProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [orderBtnTxt, setOrderBtnTxt] = useState('Place Order')
 
-  //const randomPrice = (Math.random() * 10).toFixed(2);
+  const randomPrice = (Math.random() * 10).toFixed(2);
 
   useEffect(() => {
     fetch(
       "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
     )
       .then((response) => response.json())
-      /* .then((data) =>
+      .then((data) =>
         data.map((item) => {
           return { ...item, price: randomPrice };
         })
-      ) */
+      )
       .then((data) => setAllPhotos(data));
   }, []);
 
