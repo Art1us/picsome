@@ -11,9 +11,10 @@ function ContextProvider({ children }) {
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
+      "https://raw.githubusercontent.com/Art1us/pictures-for-picsome/main/images.json"
     )
       .then((response) => response.json())
+      
       .then((data) =>
         data.map((item) => {
           return { ...item, price: randomPrice };
