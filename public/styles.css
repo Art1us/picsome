@@ -78,7 +78,7 @@ img.image-grid {
 
 .favorite {
   color: var(--red);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -86,7 +86,7 @@ img.image-grid {
 }
 
 .ri-heart-fill {
-  opacity: .7;
+  opacity: .9;
 }
 
 .ri-delete-bin-line, .ri-delete-bin-fill {
@@ -96,11 +96,15 @@ img.image-grid {
 
 .cart {
   color: var(--blue);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   position: absolute;
   top: 5px;
   right: 5px;
   cursor: pointer;
+}
+
+.cart,.favorite{
+  text-shadow: black 0px 0 10px;
 }
 
 .wide {
@@ -135,3 +139,5 @@ a {
 a:visited { color: var(--light-blue); }
 a:hover { color: var(--light-blue); }
 a:active { color: var(--light-blue); }
+
+
