@@ -5,20 +5,13 @@ const Context = React.createContext();
 function ContextProvider({ children }) {
   const [allPhotos, setAllPhotos] = useState([]);
   const [cartItems, setCartItems] = useState([]);
-  const [orderBtnTxt, setOrderBtnTxt] = useState('Place Order')
-
-  const randomPrice = (Math.random() * 10).toFixed(2);
+  const [orderBtnTxt, setOrderBtnTxt] = useState("Place Order");
 
   useEffect(() => {
     fetch(
-      "https://raw.githubusercontent.com/bobziroll/scrimba-react-bootcamp-images/master/images.json"
+      "https://raw.githubusercontent.com/Art1us/pictures-for-picsome/main/images.json"
     )
       .then((response) => response.json())
-      .then((data) =>
-        data.map((item) => {
-          return { ...item, price: randomPrice };
-        })
-      )
       .then((data) => setAllPhotos(data));
   }, []);
 
@@ -27,7 +20,7 @@ function ContextProvider({ children }) {
       if (id === photo.id) {
         return { ...photo, isFavorite: !photo.isFavorite };
       }
-      return { ...photo };
+      return photo;
     });
     setAllPhotos(newArr);
   }
@@ -37,18 +30,16 @@ function ContextProvider({ children }) {
   }
 
   function removeFromCart(img) {
-    const newCartArr = cartItems.filter((item) => item.id !== img.id);
-    setCartItems(newCartArr);
+    setCartItems((prev) => prev.filter((item) => item.id !== img.id));
   }
 
-  function placeOrder(){
-    setOrderBtnTxt('Ordering...')
-    setTimeout(()=>{
-      setCartItems([])
-      console.log('Order Placed!')
-      setOrderBtnTxt('Place Order')
-
-    }, 3000)
+  function placeOrder() {
+    setOrderBtnTxt("Ordering...");
+    setTimeout(() => {
+      setCartItems([]);
+      console.log("Order Placed!");
+      setOrderBtnTxt("Place Order");
+    }, 3000);
   }
 
   return (

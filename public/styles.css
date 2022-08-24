@@ -6,7 +6,12 @@
   --blue: #ACE6EC;
 }
 
-html, body {
+*{
+  box-sizing: border-box;
+}
+
+html,
+body {
   font-family: 'Oswald', sans-serif;
   margin: 0;
   padding: 0;
@@ -23,34 +28,54 @@ main.photos {
 
 main.cart-page {
   padding: 10px;
+  width: 90vw;
 }
 
-.cart-page > h1 {
+.header-container {
+  width: 90vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:0 30px;
+}
+
+
+
+main.photos,
+main.cart-page,
+.header-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cart-page>h1 {
   text-align: center;
 }
 
 .cart-page .total-cost {
   text-align: right;
   font-size: 1.3em;
+  margin-right: 30px;
 }
 
 .cart-page div.order-button {
   display: flex;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
-div.order-button > button {
+div.order-button>button {
   border-color: var(--black);
   cursor: pointer;
   padding: 15px;
   transition: all .2s ease-in-out;
 }
 
-div.order-button > button:focus {
+div.order-button>button:focus {
   outline: none;
 }
 
-div.order-button > button:disabled {
+div.order-button>button:disabled {
   border-color: lightgray;
 }
 
@@ -58,12 +83,12 @@ div.order-button > button:disabled {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 0;
+  margin: 20px auto;
 }
 
 .cart-item img {
   margin-right: auto;
-  margin-left: 10px;   
+  margin-left: 10px;
 }
 
 img.image-grid {
@@ -78,7 +103,7 @@ img.image-grid {
 
 .favorite {
   color: var(--red);
-  font-size: 1.2rem;
+  font-size: 2rem;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -86,21 +111,27 @@ img.image-grid {
 }
 
 .ri-heart-fill {
-  opacity: .7;
+  opacity: .9;
 }
 
-.ri-delete-bin-line, .ri-delete-bin-fill {
+.ri-delete-bin-line,
+.ri-delete-bin-fill {
   font-size: 1.3em;
   cursor: pointer;
 }
 
 .cart {
   color: var(--blue);
-  font-size: 1.2rem;
+  font-size: 2rem;
   position: absolute;
   top: 5px;
   right: 5px;
   cursor: pointer;
+}
+
+.cart,
+.favorite {
+  text-shadow: var(--black) 0px 0 10px;
 }
 
 .wide {
@@ -118,20 +149,30 @@ img.image-grid {
 
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   background-color: var(--pink);
   color: var(--light-blue);
   padding: 0 10px;
-  -webkit-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
-  -moz-box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
-  box-shadow: 0px 2px 10px -5px rgba(21,6,5,1);
+  -webkit-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+  -moz-box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
+  box-shadow: 0px 2px 10px -5px rgba(21, 6, 5, 1);
 }
+
+
 
 a {
   text-decoration: none;
 }
 
-a:visited { color: var(--light-blue); }
-a:hover { color: var(--light-blue); }
-a:active { color: var(--light-blue); }
+a:visited {
+  color: var(--light-blue);
+}
+
+a:hover {
+  color: var(--light-blue);
+}
+
+a:active {
+  color: var(--light-blue);
+}

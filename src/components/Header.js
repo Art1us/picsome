@@ -7,6 +7,7 @@ export default function Header() {
 
   return (
     <header>
+      <div className='header-container'>
       <Link to="/">
         <h2>Pic Some</h2>
       </Link>
@@ -19,6 +20,7 @@ export default function Header() {
           }
         ></i>
       </Link>
+      </div>
     </header>
   );
 }
