@@ -37,7 +37,6 @@ function ContextProvider({ children }) {
   }
 
   function removeFromCart(img) {
-   // const newCartArr = cartItems.filter((item) => item.id !== img.id);
     setCartItems(prev=>prev.filter(item=>item.id!==img.id));
   }
 
